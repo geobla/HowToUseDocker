@@ -3,7 +3,7 @@
 ---
 # description: 
 
-Personal Docker notes, that would like to share, to help someone out.
+Personal Docker notes, that I would like to share, to help someone out.
 ---
 
 All notes are from freecodecamp YouTube video. [https://www.youtube.com/watch?v=fqMOX6JJhGo\&t=1458s](https://www.youtube.com/watch?v=fqMOX6JJhGo\&t=1458s)&#x20;
