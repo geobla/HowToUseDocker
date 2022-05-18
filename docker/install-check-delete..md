@@ -47,7 +47,7 @@ With this command, docker will pull the image from the hub repo, and run it.
 
 This is the result you should get:
 
-![](../.gitbook/assets/GetImage\(1\).png)
+![](<../.gitbook/assets/GetImage(1) (1).png>)
 
 ### Upgrade Docker after using the convenience script
 
