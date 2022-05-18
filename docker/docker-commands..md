@@ -83,3 +83,26 @@ docker images
 command to get the images list on your server.&#x20;
 
 ![](../.gitbook/assets/GetImage.jpeg)
+
+To remove an image run:
+
+```bash
+docker rmi <imageName>
+```
+
+![](../.gitbook/assets/GetImage\(1\).jpeg)
+
+* <mark style="color:red;">IMPORTANT!!</mark>&#x20;
+
+Remove all depended containers <mark style="color:red;">BEFORE</mark> removing the image!! (Check previous step).
+
+### ONLY download image and DO NOT run.
+
+If we **ONLY** want to download the image but **NOT RUN** the container at the same time we use the command:
+
+```bash
+docker pull <imageName>
+```
+
+![](../.gitbook/assets/GetImage\(2\).jpeg)
+

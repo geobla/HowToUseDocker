@@ -35,7 +35,7 @@ To double-check if everything installed correctly, go to [https://hub.docker.com
 
 and copy the docker run command from inside the script:  (add sudo in the beginning).&#x20;
 
-![](../.gitbook/assets/GetImage.png)
+![](<../.gitbook/assets/GetImage (1).png>)
 
 Or just copy-paste this code in your server terminal:
 
