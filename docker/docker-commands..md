@@ -30,7 +30,7 @@ That's because, even though we are attached to dockers console, it is not able t
 
 To get around it, we must map the Standard Input (stdin) of the host to the docker.
 
-For that we use the <mark style="color:yellow;">-i</mark> parameter. i stands for interactive mode.&#x20;
+For that we use the <mark style="color:green;">-i</mark> parameter. i stands for interactive mode.&#x20;
 
 ```bash
 docker run -i <name>
@@ -42,7 +42,7 @@ Now we can type a name and get an output.
 
 But we are still missing the prompt. That's because the terminal is not attached.&#x20;
 
-To attach a terminal we include the <mark style="color:yellow;">-t</mark> (<mark style="color:yellow;">t</mark>erminal).
+To attach a terminal we include the <mark style="color:green;">-t</mark> (<mark style="color:green;">t</mark>erminal).
 
 ```bash
 docker -it <name>
@@ -55,6 +55,40 @@ docker -it <name>
 Lets run the application in a docker container inside a docker host. &#x20;
 
 ![](../.gitbook/assets/run\_port\_mapping.png)
+
+We see that the app is running, and also see the server info. (ip:port)
+
+But how can an external user access the app?
+
+#### 1st option
+
+Use the ip of the docker container it runs on. Every docker container has an ip assigned by default.&#x20;
+
+![](../.gitbook/assets/docker\_internal\_ip.png)
+
+To get the container ip address run the following command:
+
+```bash
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-ID>
+```
+
+But this ip is only accessible from inside the docker host.
+
+If we want to access the specific app from outside we must use the docker host (your pc or server) ip address.&#x20;
+
+![](../.gitbook/assets/docker\_host\_ip.png)
+
+But for that to work, we must map the port inside the docker container, to a free port on the docker host.
+
+For example if we want external users to use port 80 on the docker host, we must map port 80 docker host to port 5000 docker container using the -p parameter.
+
+```bash
+docker run -d -p <dockerHostPort>:<dockerContainerPort>
+```
+
+![](../.gitbook/assets/docker\_host\_container\_ip\_mapping.png)
+
+<mark style="color:red;">Don't forget</mark> to change https to http in URL!!!
 
 ### docker ps
 
