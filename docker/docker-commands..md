@@ -16,6 +16,40 @@ For example:&#x20;
 
 ![](../.gitbook/assets/GetImage\(2\).png)
 
+### run -i / run -it.
+
+Lets imagine we have a simple prompt app that when run, asks for a name and prints a welcome message afterwards.
+
+![](<../.gitbook/assets/freeCodeCamp.org - Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers \[fqMOX6JJhGo - 853x480 - 34m59s].png>)
+
+If we dockerize this app and run it as a container, it will not wait for the prompt. It will execute immediately, on Standard Out (stdout).
+
+![](<../.gitbook/assets/freeCodeCamp.org - Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers \[fqMOX6JJhGo - 853x480 - 35m11s].png>)
+
+That's because, even though we are attached to dockers console, it is not able to read any input from you. It doesn't have a terminal to read inputs from.
+
+To get around it, we must map the Standard Input (stdin) of the host to the docker.
+
+For that we use the <mark style="color:yellow;">-i</mark> parameter. i stands for interactive mode.&#x20;
+
+```bash
+docker run -i <name>
+```
+
+![](../.gitbook/assets/run\_i.png)
+
+Now we can type a name and get an output.
+
+But we are still missing the prompt. That's because the terminal is not attached.&#x20;
+
+To attach a terminal we include the <mark style="color:yellow;">-t</mark> (<mark style="color:yellow;">t</mark>erminal).
+
+```bash
+docker -it <name>
+```
+
+![](../.gitbook/assets/run\_it.png)
+
 ### docker ps
 
 ```bash
