@@ -182,6 +182,26 @@ docker rmi <imageName>
 
 Remove all depended containers <mark style="color:red;">BEFORE</mark> removing the image!! (Check previous step).
 
+### Removing All Unused Docker Objects <a href="#removing-all-unused-docker-objects" id="removing-all-unused-docker-objects"></a>
+
+The `docker system prune` command removes all stopped containers, dangling images, and unused networks:
+
+```bash
+docker system prune
+```
+
+If you want to remove all unused images not just the dangling ones, add the `-a` (`--all`) option to the command:
+
+```bash
+docker system prune -a
+```
+
+By default, the command doesn’t remove unused volumes to prevent losing important data. To remove all unused volumes, pass the `--volumes` option:
+
+```bash
+docker system prune --volumes
+```
+
 ### ONLY download image and DO NOT run.
 
 If we **ONLY** want to download the image but **NOT RUN** the container at the same time we use the command:
