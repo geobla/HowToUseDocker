@@ -50,6 +50,12 @@ docker -it <name>
 
 ![](../.gitbook/assets/run\_it.png)
 
+### run Port Mapping.
+
+Lets run the application in a docker container inside a docker host. &#x20;
+
+![](../.gitbook/assets/run\_port\_mapping.png)
+
 ### docker ps
 
 ```bash
