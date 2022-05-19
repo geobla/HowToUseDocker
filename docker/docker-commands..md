@@ -90,6 +90,18 @@ docker run -d -p <dockerHostPort>:<dockerContainerPort>
 
 <mark style="color:red;">Don't forget</mark> to change https to http in URL!!!
 
+Now all traffic from port 80 is being sent to port 5000 of the container.
+
+Using this method we can run multiple instances of the same application, and map them to different port of the host.
+
+![](../.gitbook/assets/docker-multi-instances-same-app-port-mapping.png)
+
+Or run different applications on different ports. (MySQL example running on default port 3306).
+
+![](../.gitbook/assets/docker-different-apps-port-mapping.png)
+
+We can run as many applications at as many ports as we want. <mark style="color:red;">BUT</mark> we can <mark style="color:red;">NOT</mark> map on a docker host port already in use.
+
 ### docker ps
 
 ```bash
