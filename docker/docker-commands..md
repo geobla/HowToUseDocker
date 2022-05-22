@@ -150,11 +150,23 @@ If we use this command, we will also get the previous terminated containers.
 
 ![](../.gitbook/assets/GetImage\(4\).png)
 
-If you need more info about a container, than the info ps command provides, you can use the inspect option.c
+If you need more info about a container, than the info \[ps] command provides, you can use the \[inspect] option, which will provide you a json file with more details.
 
 ```bash
 docker inspect <containerName>
 ```
+
+![](../.gitbook/assets/docker-inspect.png)
+
+### Docker logs.
+
+To check the logs of a running container, use the logs option.
+
+```bash
+docker logs <containerName>
+```
+
+![](../.gitbook/assets/docker-logs.png)
 
 ### Stop a container from running.
 
