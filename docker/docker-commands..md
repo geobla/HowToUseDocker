@@ -120,17 +120,13 @@ If we want to keep the data, after we remove the container, or keep a backup, we
 
 To do this, in our example, we create a directory in the host (our) PC and name it /opt/datadir and map (connect) it to the dockers container /var/lib/mysql.
 
-```
+```bash
 docker run -v /hostdir/:/containerdir/ <containerName>
 ```
 
 This way the docker container will mount the host directory inside it, and all the data will be stored in the host directory, even when the specific container crushes or gets removed.
 
 ![](../.gitbook/assets/docker-volume-mapping4.png)
-
-
-
-![](../.gitbook/assets/docker-volume-mapping3.png)
 
 ### docker ps
 
@@ -153,6 +149,12 @@ docker ps –a
 If we use this command, we will also get the previous terminated containers.
 
 ![](../.gitbook/assets/GetImage\(4\).png)
+
+If you need more info about a container, than the info ps command provides, you can use the inspect option.c
+
+```bash
+docker inspect <containerName>
+```
 
 ### Stop a container from running.
 
