@@ -102,6 +102,32 @@ Or run different applications on different ports. (MySQL example running on defa
 
 We can run as many applications at as many ports as we want. <mark style="color:red;">BUT</mark> we can <mark style="color:red;">NOT</mark> map on a docker host port already in use.
 
+### Volume Mapping.
+
+Suppose we run a Mysql docker container. All the databases and tables are stored inside the container, in the /var/lib/mysql directory.
+
+Remember every container has its own file system. &#x20;
+
+![](../.gitbook/assets/docker-volume-mapping1.png)
+
+What will happen if we choose to remove the container?
+
+All the data and tables would be lost.
+
+![](../.gitbook/assets/docker-volume-mapping.2.png)
+
+If we want to keep the data, after we remove the container, or keep a backup, we must map a directory from the container to the hosts PC.&#x20;
+
+To do this, in our example, we create a directory in the host (our) PC and name it /opt/datadir and map (connect) it to the dockers container /var/lib/mysql.
+
+```
+docker run -v /hostdir/:/containerdir/ <containerName>
+```
+
+
+
+![](../.gitbook/assets/docker-volume-mapping3.png)
+
 ### docker ps
 
 ```bash
