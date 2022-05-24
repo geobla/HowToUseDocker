@@ -15,7 +15,3 @@ Lets create an image containing a simple web app, created with python and Flask.
 2\. Create a dockerfile (use VS CODE / install docker app).&#x20;
 
 ![](../.gitbook/assets/vscode-docker.png)
-
-![](../.gitbook/assets/docker-image3.png)
-
-![](../.gitbook/assets/docker-image4.png)
